@@ -35,11 +35,13 @@ jobs:
 
       - run: brew test-bot --only-tap-syntax
       
-      - name: Configure git
-        uses: Homebrew/actions/git-user-config@master
-        
-      - run: brew test-bot --only-formulae
-
+      - run: |
+          base64_token=$(echo -n "x-access-token:${{ secrets.GITHUB_TOKEN }}" | base64)
+          echo "::add-mask::${base64_token}"
+          git config --global "http.${GITHUB_SERVER_URL}/.extraheader" "Authorization: basic ${base64_token}"
+          echo "TOKEN_SET=1" >> "$GITHUB_STATE"
+          brew test-bot --only-formulae
+          
       - name: Upload bottles as artifact
         if: always() && github.event_name == 'pull_request'
         uses: actions/upload-artifact@main
