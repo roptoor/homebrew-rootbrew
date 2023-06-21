@@ -34,10 +34,11 @@ jobs:
       - run: brew test-bot --only-setup
 
       - run: brew test-bot --only-tap-syntax
-
+      
+      - name: Configure git
+        uses: Homebrew/actions/git-user-config@master
+        
       - run: brew test-bot --only-formulae
-        with: 
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload bottles as artifact
         if: always() && github.event_name == 'pull_request'
