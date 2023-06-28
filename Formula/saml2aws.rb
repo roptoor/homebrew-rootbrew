@@ -7,13 +7,7 @@ class Saml2aws < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "52fd3c090f0d831303e8ba4b4fae03276f6fb4d60f21bf74de638d868ec1faae"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4155b513e7183547f58f90f76f14baa592c4bf871dcaf6dc696d216a572891c3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ebd1e25725bcd43a1f7eb09b65f20b89a65219a088171a467b1a1604df67c252"
     sha256 cellar: :any_skip_relocation, ventura:        "ee8a411bdd9d4bc3c269aa530d50a8a51b0e2dc427590fc961c6642a22918da4"
-    sha256 cellar: :any_skip_relocation, monterey:       "2a1047e848ef6d11e8178176900a7f3e94fd7287809ec922a5a9bb90e91a2156"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3ac45cb56581e7339026ea53794142aaa978296f36557a5079ad66a0a8195544"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "871582ecaa99c666e3612a91d92576be265bd806cc6c8b4f31cb9419906ee3a6"
   end
 
   depends_on "go" => :build
