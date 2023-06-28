@@ -6,10 +6,6 @@ class Saml2aws < Formula
       revision: "68d09f20dfde6bc617f1820850599b005a01c034"
   license "MIT"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, ventura: "ee8a411bdd9d4bc3c269aa530d50a8a51b0e2dc427590fc961c6642a22918da4"
-  end
-
   depends_on "go" => :build
 
   def install
